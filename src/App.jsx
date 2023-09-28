@@ -4,6 +4,7 @@ import NavBar from './components/Navbar/Navbar';
 import './App.css'
 import {Home, CreateAccount} from './components/pages'
 
+
 const App = () => {
   return (
     <UserContext>

@@ -1,42 +1,198 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.home-background-image {
+  background-image: url("./flowerlady.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  margin-top: -40px;
+}
+
+.home-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30%;
+  height: 30%;
+  min-width: 300px;
+  min-height: auto;
+  background-color: rgb(252, 255, 255);
+  border-radius: 2px;
+  margin-left: 20%;
+  margin-top: 15%;
+  box-shadow: 0px 0px 8px rgb(40, 40, 40);
+  padding: 10px;
+}
+
+.boost {
+  font-weight: 700;
+}
+
+.see-rates {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
   text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.see-rates:hover {
+  background-color: #fff;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.see-rates:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .see-rates {
+    min-width: 120px;
+    padding: 0 25px;
   }
 }
+.header-section {
+  display: flex;
+  flex-direction: row;
+}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.bank-logo {
+  height: 5em;
+  margin-left: 55px;
+}
+
+.bank-name {
+  padding: 10px;
+  margin-top: 15px;
+  font-family: libre baskerville, sans-serif;
+  font-size: 1.8em;
+}
+
+.header-divider {
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgb(125, 138, 219),
+    rgb(146, 230, 255)
+  );
+  height: 6px;
+}
+
+.login-dark {
+  height: 1000px;
+  background: #475d62 url(./farmland.jpg);
+  background-size: cover;
+  position: relative;
+  margin: -40px;
+}
+
+.login-dark form {
+  max-width: 320px;
+  width: 90%;
+  background-color: #1e2833;
+  border: 2px solid white;
+  padding: 40px;
+  border-radius: 8px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  color: #fff;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+.login-dark form:active {
+  color: transparent;
+}
+
+.login-dark form .form-control::placeholder {
+  color: white; /* Set the placeholder text color to white */
+}
+
+.login-dark .illustration {
+  text-align: center;
+  padding: 15px 0 20px;
+  font-size: 100px;
+  color: #2980ef;
+}
+
+.login-dark form .form-control {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #434a52;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+}
+
+.login-dark form .btn-primary {
+  background: #214a80;
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 26px;
+  text-shadow: none;
+  outline: none;
+}
+
+.login-dark form .btn-primary:hover,
+.login-dark form .btn-primary:active {
+  background: #214a80;
+  outline: none;
+}
+
+.login-dark form .forgot {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #6f7a85;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.login-dark form .forgot:hover,
+.login-dark form .forgot:active {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.login-dark form .btn-primary:active {
+  transform: translateY(1px);
+}
+
+.forgot {
+  margin-top: 10px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+
+  .login-dark form {
+    max-width: 90%; /* Adjust form width */
+    width: 70%; /* Adjust form width */
+    top: 20%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    display: flex; /* Use Flexbox to center */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .login-dark .illustration {
+    font-size: 60px; /* Adjust icon size for mobile */
+  }
 }
