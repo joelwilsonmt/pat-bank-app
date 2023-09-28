@@ -1,0 +1,13 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+  border-radius: 6px; /* Adjust for navbar and header height */
+}
+
+.card-container {
+  background-image: url("./images/hopefulman.jpeg");
+  background-size: cover;
+  background-position: center;
+}
