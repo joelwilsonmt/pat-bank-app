@@ -3,6 +3,9 @@ const Deposit = () => {
     const [totalState, setTotalState] = React.useState(0);
     const [isDeposit, setIsDeposit] = React.useState(true);
     const [activeButton, setActiveButton] = React.useState("deposit");
+    const [inputValue, setInputValue] = React.useState("");
+    const [alertMessage, setAlertMessage] = React.useState("");
+    const [successMessage, setSuccessMessage] = React.useState("");
   
     let status = `Account Balance $ ${totalState} `;
   
@@ -12,8 +15,23 @@ const Deposit = () => {
       return (
         <label className="label huge">
           <h3> {choice[Number(!isDeposit)]}</h3>
-          <input type="number" width="200" onChange={onChange}></input>
-          <input id="submit" type="submit" width="200" value="Submit"></input>
+          <input
+            type="number"
+            width="200"
+            value={inputValue}
+            onChange={(e) => {
+              setInputValue(e.target.value);
+              setAlertMessage("");
+            }}
+          ></input>
+          <input
+            id="submit"
+            type="button"
+            width="200"
+            value="Submit"
+            onClick={handleSubmit}
+            disabled={!inputValue}
+          ></input>
         </label>
       );
     };
@@ -40,29 +58,46 @@ const Deposit = () => {
       deposit = Number(event.target.value);
     };
   
-    const handleSubmit = (event) => {
-      let newTotal = isDeposit ? totalState + deposit : totalState - deposit;
-      setTotalState(newTotal);
-      if (newTotal < 0) {
-        alert("Cannot withdraw funds, account balance too low");
-        return;
+    const handleSubmit = () => {
+      if (isNaN(inputValue)) {
+        setAlertMessage("Please enter a valid number.");
+      } else if (Number(inputValue) < 0) {
+        setAlertMessage("Cannot deposit or withdraw a negative amount.");
+      } else {
+        deposit = Number(inputValue);
+        let newTotal = isDeposit ? totalState + deposit : totalState - deposit;
+        setTotalState(newTotal);
+        if (newTotal < 0) {
+          setAlertMessage("Cannot withdraw funds, account balance too low");
+          setTotalState(totalState);
+        } else {
+          // Set success message based on the transaction type
+          setSuccessMessage(
+            `Your ${isDeposit ? "deposit" : "withdrawal"} was successful.`
+          );
+          // Clear the input field
+          setInputValue("");
+        }
       }
-      event.preventDefault();
     };
   
     const handleAmountSelect = (amount) => {
-      deposit = amount;
+      setInputValue(amount);
+      setSuccessMessage("");
+      setAlertMessage("");
     };
   
     const handleButtonClick = (type) => {
       setIsDeposit(type === "deposit");
       setActiveButton(type);
+      setAlertMessage("");
+      setSuccessMessage("")
     };
   
     return (
       <>
         <div className="deposit-container">
-          <form onSubmit={handleSubmit}>
+          <form>
             <h2 id="total">{status}</h2>
             <button
               className={`btn ${
@@ -80,15 +115,13 @@ const Deposit = () => {
             >
               Withdrawal
             </button>
-            <ATMDeposit
-              onChange={handleChange}
-              isDeposit={isDeposit}
-            ></ATMDeposit>
+            <ATMDeposit onChange={handleChange} isDeposit={isDeposit}></ATMDeposit>
             <PresetAmountButtons onAmountSelect={handleAmountSelect} />
           </form>
+          {alertMessage && <div className="alert alert-danger">{alertMessage}</div>}
+          {successMessage && <div className="alert alert-success">{successMessage}</div>}
         </div>
       </>
     );
   };
-
-  export default Deposit;
+  
