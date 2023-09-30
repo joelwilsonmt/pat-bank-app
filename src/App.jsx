@@ -27,13 +27,13 @@ const App = () => {
       <HashRouter>
         <NavBar />
       <Routes>
-            <Route path="/" exact component={<Home />} />
+            <Route path="/" exact element={<Home />} />
             <Route path="/CreateAccount" element={<CreateAccount />} />
-            <Route path="/deposit/" component={<Deposit />} />
+            <Route path="/Deposit/" element={<Deposit />} />
             {/* <Route path="/withdraw/" component={Withdraw} /> */}
             {/* <Route path="/balance/" component={Balance} /> */}
-            <Route path="/alldata/" component={<AllData />} />
-            <Route path="/login/" element={<Login />} />
+            <Route path="/AllData/" element={<AllData />} />
+            <Route path="/Login/" element={<Login />} />
 
         </Routes>
       </HashRouter>
