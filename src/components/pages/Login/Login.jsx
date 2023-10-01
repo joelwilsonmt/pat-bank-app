@@ -1,4 +1,4 @@
-function Login() {
+const Login = () => {
     return (
       <>
         <div className="login-dark">
@@ -36,4 +36,6 @@ function Login() {
       </>
     );
   }
+
+  export default Login;
   

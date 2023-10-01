@@ -1,12 +1,12 @@
 import {HashRouter, Route, Routes} from 'react-router-dom'
-import {UserContext} from './providers/UserContext';
+import UserContext from './providers/UserContext';
 import NavBar from './components/Navbar/Navbar';
 import './App.css'
-import {Home} from './components/pages/Home';
-import {CreateAccount} from './components/pages/CreateAccount';
-import {Login} from './components/pages/Login';
-import {Deposit} from './components/pages/Deposit';
-import {AllData} from './components/pages/AllData';
+import Home from './components/pages/Home';
+import CreateAccount from './components/pages/CreateAccount';
+import Login from './components/pages/Login';
+import Deposit from './components/pages/Deposit';
+import AllData from './components/pages/AllData';
 
 
 const App = () => {

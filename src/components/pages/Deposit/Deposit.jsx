@@ -1,11 +1,13 @@
+import { react, useState } from "react";
+
 const Deposit = () => {
     let deposit = 0; // state of this transaction
-    const [totalState, setTotalState] = React.useState(0);
-    const [isDeposit, setIsDeposit] = React.useState(true);
-    const [activeButton, setActiveButton] = React.useState("deposit");
-    const [inputValue, setInputValue] = React.useState("");
-    const [alertMessage, setAlertMessage] = React.useState("");
-    const [successMessage, setSuccessMessage] = React.useState("");
+    const [totalState, setTotalState] = useState(0);
+    const [isDeposit, setIsDeposit] = useState(true);
+    const [activeButton, setActiveButton] = useState("deposit");
+    const [inputValue, setInputValue] = useState("");
+    const [alertMessage, setAlertMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
   
     let status = `Account Balance $ ${totalState} `;
   
@@ -124,4 +126,6 @@ const Deposit = () => {
       </>
     );
   };
+
+  export default Deposit;
   

@@ -1,12 +1,15 @@
-function CreateAccount() {
-  const [show, setShow] = React.useState(true);
-  const [status, setStatus] = React.useState("");
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const ctx = React.useContext(UserContext);
-  const [isFormValid, setIsFormValid] = React.useState(false);
-  const [passwordError, setPasswordError] = React.useState("");
+import { useState, useContext } from "react";
+import UserContext from "./components/providers/UserContext";
+import Card from ""
+const CreateAccount = () => {
+  const [show, setShow] = useState(true);
+  const [status, setStatus] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const ctx = useContext(UserContext);
+  const [isFormValid, setIsFormValid] = useState(false);
+  const [passwordError, setPasswordError] = useState("");
 
   function validate(field, label) {
     if (!field) {
@@ -134,3 +137,5 @@ function CreateAccount() {
     </div>
   );
 }
+
+export default CreateAccount;

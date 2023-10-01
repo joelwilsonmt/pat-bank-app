@@ -1,7 +1,8 @@
-import React from 'react';
+import { useContext } from 'react';
+import UserContext from "./providers/UserContext";
 
 const AllData = () => {
-    const ctx = React.useContext(UserContext);
+    const ctx = useContext(UserContext);
   
     console.log('User data from context:', ctx.users); // Log user data to check
   
