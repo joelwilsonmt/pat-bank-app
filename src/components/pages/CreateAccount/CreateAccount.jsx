@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
-import UserContext from "./components/providers/UserContext";
-import Card from ""
+import { UserContext } from "../../../providers/UserContext";
+import Card from "../../Card";
 const CreateAccount = () => {
   const [show, setShow] = useState(true);
   const [status, setStatus] = useState("");

@@ -1,11 +1,11 @@
 .login-dark {
     height: 1000px;
-    background: #475d62 url(./farmland.jpg);
+    background: #475d62 url(./images/farmland.jpg);
     background-size: cover;
     position: relative;
     margin: -40px;
   }
-  
+
   .login-dark form {
     max-width: 320px;
     width: 90%;
@@ -20,22 +20,22 @@
     color: #fff;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
   }
-  
+
   .login-dark form:active {
     color: transparent;
   }
-  
+
   .login-dark form .form-control::placeholder {
     color: white; /* Set the placeholder text color to white */
   }
-  
+
   .login-dark .illustration {
     text-align: center;
     padding: 15px 0 20px;
     font-size: 100px;
     color: #2980ef;
   }
-  
+
   .login-dark form .form-control {
     background: none;
     border: none;
@@ -45,7 +45,7 @@
     outline: none;
     color: inherit;
   }
-  
+
   .login-dark form .btn-primary {
     background: #214a80;
     border: none;
@@ -56,13 +56,13 @@
     text-shadow: none;
     outline: none;
   }
-  
+
   .login-dark form .btn-primary:hover,
   .login-dark form .btn-primary:active {
     background: #214a80;
     outline: none;
   }
-  
+
   .login-dark form .forgot {
     display: block;
     text-align: center;
@@ -71,24 +71,24 @@
     opacity: 0.9;
     text-decoration: none;
   }
-  
+
   .login-dark form .forgot:hover,
   .login-dark form .forgot:active {
     opacity: 1;
     text-decoration: none;
   }
-  
+
   .login-dark form .btn-primary:active {
     transform: translateY(1px);
   }
-  
+
   .forgot {
     margin-top: 10px;
   }
-  
+
   /* Mobile styles */
   @media (max-width: 768px) {
-  
+
     .login-dark form {
       max-width: 90%; /* Adjust form width */
       width: 70%; /* Adjust form width */
@@ -100,9 +100,8 @@
       align-items: center; /* Center items horizontally */
       justify-content: center; /* Center items vertically */
     }
-  
+
     .login-dark .illustration {
       font-size: 60px; /* Adjust icon size for mobile */
     }
   }
-  

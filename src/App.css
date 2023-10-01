@@ -1,5 +1,5 @@
 .home-background-image {
-  background-image: url("./flowerlady.jpeg");
+  background-image: url("./images/flowerlady.jpeg");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -91,7 +91,7 @@
 
 .login-dark {
   height: 1000px;
-  background: #475d62 url(./farmland.jpg);
+  background: #475d62 url(./images/farmland.jpg);
   background-size: cover;
   position: relative;
   margin: -40px;

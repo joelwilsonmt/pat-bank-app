@@ -1,11 +1,10 @@
-import { useContext } from 'react';
-import UserContext from "./providers/UserContext";
+import {useUserContext} from "../../../providers/UserContext";
 
 const AllData = () => {
-    const ctx = useContext(UserContext);
-  
+    const ctx = useUserContext();
+
     console.log('User data from context:', ctx.users); // Log user data to check
-  
+
     return (
       <>
         <h5 className="mt-4">All Data in Store</h5>
@@ -28,6 +27,5 @@ const AllData = () => {
       </>
     );
   }
-  
+
   export default AllData;
-  
