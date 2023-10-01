@@ -7,7 +7,7 @@
 }
 
 .card-container {
-  background-image: url("./images/hopefulman.jpeg");
+  background-image: url("hopefulman.jpeg");
   background-size: cover;
   background-position: center;
 }

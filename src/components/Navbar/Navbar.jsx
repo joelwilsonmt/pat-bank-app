@@ -32,11 +32,11 @@ function NavBar() {
                 Deposit
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="#/withdraw/">
                 Withdraw
               </a>
-            </li>
+            </li> */}
             {/* <li className="nav-item">
               <a className="nav-link" href="#/balance/">
                 Balance

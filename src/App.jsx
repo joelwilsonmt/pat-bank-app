@@ -2,7 +2,11 @@ import {HashRouter, Route, Routes} from 'react-router-dom'
 import {UserContext} from './providers/UserContext';
 import NavBar from './components/Navbar/Navbar';
 import './App.css'
-import {Home, CreateAccount} from './components/pages'
+import Home from './components/pages/Home/Home';
+import CreateAccount from './components/pages/CreateAccount/CreateAccount';
+import Login from './components/pages/Login/Login';
+import Deposit from './components/pages/Deposit/Deposit';
+import AllData from './components/pages/AllData/AllData';
 
 
 const App = () => {
@@ -23,13 +27,13 @@ const App = () => {
       <HashRouter>
         <NavBar />
       <Routes>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact element={<Home />} />
             <Route path="/CreateAccount" element={<CreateAccount />} />
-            {/* <Route path="/deposit/" component={Deposit} />
-            <Route path="/withdraw/" component={Withdraw} />
-            <Route path="/balance/" component={Balance} />
-            <Route path="/alldata/" component={AllData} />
-            <Route path="/login/" component={Login} /> */}
+            <Route path="/Deposit/" element={<Deposit />} />
+            {/* <Route path="/withdraw/" component={Withdraw} /> */}
+            {/* <Route path="/balance/" component={Balance} /> */}
+            <Route path="/AllData/" element={<AllData />} />
+            <Route path="/Login/" element={<Login />} />
 
         </Routes>
       </HashRouter>
