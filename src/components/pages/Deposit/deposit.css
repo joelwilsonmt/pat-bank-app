@@ -1,0 +1,134 @@
+h1,
+h2 {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}
+
+h1 {
+  font-family: "Asset", cursive;
+  line-height: 1.5;
+}
+
+h6 {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+button {
+  background-color: #e0f30c;
+  border-radius: 10px;
+  width: 150px;
+  font-size: 1.5em;
+  margin: 10px;
+  border: 2px solid #1c1e05;
+}
+
+/* Remove background styling from .deposit-container */
+.deposit-container {
+  background-color: transparent; /* Remove background color */
+  height: auto; /* Remove fixed height */
+}
+
+/* Apply the gradient to the body element */
+body {
+  background-color: #f9fcff;
+  background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
+  margin: 0; /* Reset body margin to ensure full coverage */
+  padding: 0; /* Reset body padding */
+}
+
+/* Set a transparent background for the header elements */
+.header-section,
+.header-divider {
+  background: transparent;
+}
+
+/* Adjust margins for header-section and header-divider */
+.header-section {
+  margin-bottom: 20px; /* Add margin at the bottom to separate it from the gradient */
+}
+
+.header-divider {
+  margin-top: -20px; /* Add negative margin to overlap with header-section */
+}
+
+#total {
+  margin-top: 75px;
+}
+
+button:hover {
+  background-color: #19d077;
+  border: 2px solid #1c1e05;
+}
+
+.active-button {
+  background-color: #19d077 !important;
+  border: 2px solid #1c1e05 !important;
+}
+
+h3 {
+  margin-bottom: 20px;
+  margin-left: 40px;
+}
+
+#submit {
+  margin: 10px;
+}
+
+#preset-amounts {
+  margin-top: 40px;
+}
+
+input[type="number"] {
+  margin: 20px;
+  height: 40px;
+  width: 200px;
+  font-size: 1.2em;
+  border-radius: 7px;
+  padding: 10px;
+}
+
+/* Submit button */
+.btn-1 {
+  font-family: Hack, monospace;
+  background: #d3d3d3;
+  color: #2c2c2c;
+  cursor: pointer;
+  font-size: 1.3em;
+  padding: 1.1rem;
+  border: 0;
+  transition: all 0.5s;
+  border-radius: 10px;
+  width: auto;
+  position: relative;
+  min-width: 200px;
+
+  &::after {
+    content: "\f2f5";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 400;
+    position: absolute;
+    left: 80%;
+    top: 54%;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+    background: #2b2bff;
+    transition: all 0.5s;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px #0000ff61;
+    padding: 1.1rem 1.1rem 1.1rem 1.1rem;
+    color: #ffffff;
+    /* &::after {
+          opacity: 1;
+          transition: all 0.5s;
+          color: #ffffff; */
+  }
+}

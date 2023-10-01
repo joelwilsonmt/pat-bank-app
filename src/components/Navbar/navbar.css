@@ -1,3 +1,13 @@
-.navbar {
-  border: 1px solid red;
+.nav-link {
+  margin-left: 2em;
+  border-radius: 2px;
+}
+
+.nav-link:active {
+  background-color: #007bff; /* Change to the background color you prefer */
+  color: #fff; /* Change to the text color you prefer */
+}
+
+.nav-link::after {
+  background-color: #007bff;
 }

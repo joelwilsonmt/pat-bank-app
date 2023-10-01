@@ -1,15 +1,15 @@
-import "./createaccount.css";
-import { useState } from "react";
-import { useUserContext } from "../../../providers/UserContext";
-import Card from "../../Card";
-
-function CreateAccount() {
+import { useState, useContext } from "react";
+import UserContext from "./components/providers/UserContext";
+import Card from ""
+const CreateAccount = () => {
   const [show, setShow] = useState(true);
   const [status, setStatus] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const ctx = useUserContext()
+  const ctx = useContext(UserContext);
+  const [isFormValid, setIsFormValid] = useState(false);
+  const [passwordError, setPasswordError] = useState("");
 
   function validate(field, label) {
     if (!field) {
@@ -20,11 +20,37 @@ function CreateAccount() {
     return true;
   }
 
+  function validatePassword(value) {
+    if (value.length < 8) {
+      setPasswordError("Password must be at least 8 characters long");
+      return false;
+    }
+    setPasswordError("");
+    return true;
+  }
+
+  function handleInputChange(e) {
+    // Enable the submit button if any field has content
+    setIsFormValid(!!name || !!email || !!password);
+
+    // Clear the status message when the user starts typing
+    setStatus("");
+
+    const { name, value } = e.target;
+    if (name === "name") {
+      setName(value);
+    } else if (name === "email") {
+      setEmail(value);
+    } else if (name === "password") {
+      setPassword(value);
+      validatePassword(value);
+    }
+  }
+
   function handleCreate() {
-    console.log(name, email, password);
     if (!validate(name, "name")) return;
     if (!validate(email, "email")) return;
-    if (!validate(password, "password")) return;
+    if (!validatePassword(password, "password")) return;
     ctx.users.push({ name, email, password, balance: 100 });
     setShow(false);
   }
@@ -34,6 +60,7 @@ function CreateAccount() {
     setEmail("");
     setPassword("");
     setShow(true);
+    setPasswordError("");
   }
 
   return (
@@ -51,9 +78,10 @@ function CreateAccount() {
                 type="input"
                 className="form-control"
                 id="name"
+                name="name"
                 placeholder="Enter name"
                 value={name}
-                onChange={(e) => setName(e.currentTarget.value)}
+                onChange={handleInputChange}
               />
               <br />
               Email address
@@ -62,9 +90,10 @@ function CreateAccount() {
                 type="input"
                 className="form-control"
                 id="email"
+                name="email"
                 placeholder="Enter email"
                 value={email}
-                onChange={(e) => setEmail(e.currentTarget.value)}
+                onChange={handleInputChange}
               />
               <br />
               Password
@@ -73,15 +102,20 @@ function CreateAccount() {
                 type="password"
                 className="form-control"
                 id="password"
+                name="password"
                 placeholder="Enter password"
                 value={password}
-                onChange={(e) => setPassword(e.currentTarget.value)}
+                onChange={handleInputChange}
               />
+              {passwordError && (
+                <div className="text-danger">{passwordError}</div>
+              )}
               <br />
               <button
                 type="submit"
                 className="btn btn-light"
                 onClick={handleCreate}
+                disabled={!isFormValid}
               >
                 Create Account
               </button>
